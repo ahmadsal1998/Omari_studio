@@ -7,7 +7,8 @@ services:
     runtime: node
     name: omari-studio-api
     rootDir: backend
-    buildCommand: npm install && npm run build
+    # Must run both install and build (postinstall also runs build on Render if only "npm install" is used)
+    buildCommand: "npm install && npm run build"
     startCommand: npm start
     healthCheckPath: /health
     envVars:

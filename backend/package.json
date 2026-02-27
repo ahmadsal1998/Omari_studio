@@ -7,6 +7,7 @@
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
+    "postinstall": "node -e \"if(process.env.RENDER==='true'){require('child_process').execSync('npm run build',{stdio:'inherit'})}\"",
     "seed:admin": "tsx src/scripts/seedAdmin.ts",
     "seed:landing": "tsx src/scripts/seedLanding.ts"
   },

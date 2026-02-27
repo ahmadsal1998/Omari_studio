@@ -79,3 +79,5 @@ After the backend is live:
 - **MongoDB:** Use a cloud DB (e.g. [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)) and put the connection string in `MONGODB_URI`. Allow access from anywhere (0.0.0.0/0) or add [Render’s outbound IPs](https://render.com/docs/outbound-ip-addresses) in Atlas.
 - **Free tier:** Render free tier spins down after inactivity; the first request may be slow (cold start).
 - **Health check:** The backend exposes `GET /health`. The Blueprint sets **Health Check Path** to `/health` for zero-downtime deploys.
+
+- **Build:** The backend must run `npm run build` (TypeScript → `dist/`). The Blueprint uses **Build Command** `npm install && npm run build`. If your deploy only ran `npm install`, set Build Command to `npm install && npm run build` in the service **Settings**. A `postinstall` script also runs the build on Render when `RENDER=true`, so a redeploy after pulling the latest code may fix the issue.
