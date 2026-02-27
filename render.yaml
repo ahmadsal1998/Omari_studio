@@ -1,0 +1,20 @@
+# Render Blueprint: deploy backend as a Web Service
+# Connect this repo at https://dashboard.render.com/select-repo?type=blueprint
+# Then set MONGODB_URI and JWT_SECRET in the service Environment tab.
+
+services:
+  - type: web
+    runtime: node
+    name: omari-studio-api
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      # PORT is set automatically by Render for web services
