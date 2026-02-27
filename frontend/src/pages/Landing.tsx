@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { AnimatedSection } from '../components/AnimatedSection';
 import { getImageUrl, imageProxyOnError } from '../utils/imageProxy';
+import { API_BASE } from '../utils/env';
 import './Landing.css';
-
-const API_BASE = '/api';
 
 interface LandingData {
   hero: {

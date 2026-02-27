@@ -8,6 +8,8 @@ const PROXY_NEEDED_HOSTS = [
   'cdninstagram.com',
 ];
 
+import { API_BASE } from './env';
+
 /**
  * Returns the image URL, using our proxy for external URLs that block hotlinking.
  * Use this for all images that may come from Facebook/Instagram CDNs.
@@ -19,7 +21,7 @@ export function getImageUrl(url: string | undefined): string {
     const host = parsed.hostname.toLowerCase();
     const needsProxy = PROXY_NEEDED_HOSTS.some((h) => host.includes(h));
     if (needsProxy) {
-      return `/api/proxy/image?url=${encodeURIComponent(url)}`;
+      return `${API_BASE}/proxy/image?url=${encodeURIComponent(url)}`;
     }
     return url;
   } catch {
