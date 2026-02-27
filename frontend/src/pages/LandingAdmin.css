@@ -1,0 +1,426 @@
+.landing-admin-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-2);
+}
+
+.landing-admin-tab {
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.landing-admin-tab:hover {
+  background: var(--color-bg);
+}
+
+.landing-admin-tab.active {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  font-weight: var(--font-semibold);
+}
+
+.landing-admin-content {
+  background: var(--color-surface);
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.landing-admin-loading {
+  padding: var(--space-8);
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.landing-admin-form .form-row {
+  margin-bottom: var(--space-4);
+}
+
+.landing-admin-form .form-row label {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+}
+
+.landing-admin-form .form-row input,
+.landing-admin-form .form-row textarea,
+.landing-admin-form .form-row select {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family);
+  font-size: var(--text-base);
+}
+
+.landing-admin-form .form-row input:focus,
+.landing-admin-form .form-row textarea:focus,
+.landing-admin-form .form-row select:focus {
+  outline: none;
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.landing-admin-form > .btn-primary {
+  margin-top: var(--space-4);
+}
+
+.landing-admin-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.landing-admin-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+.landing-admin-card-img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  display: block;
+}
+
+.landing-admin-card-body {
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.landing-admin-card-body span {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+}
+
+.landing-admin-card-body div {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.btn-sm {
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--text-xs);
+  min-height: 32px;
+}
+
+.btn-danger {
+  background: var(--color-danger);
+  color: white;
+  border: none;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  font-family: var(--font-family);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.btn-danger:hover {
+  background: var(--color-danger-hover);
+}
+
+.landing-admin-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: var(--space-4);
+}
+
+.landing-admin-modal {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  max-width: 480px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.landing-admin-modal h3 {
+  margin-bottom: var(--space-4);
+  font-size: var(--text-lg);
+}
+
+.landing-admin-modal .form-row {
+  margin-bottom: var(--space-4);
+}
+
+.landing-admin-modal .form-row label {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+}
+
+.landing-admin-modal .form-row input,
+.landing-admin-modal .form-row textarea,
+.landing-admin-modal .form-row select {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family);
+}
+
+.form-actions {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+/* Working hours editor in location modal */
+.landing-admin-hours-editor {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-top: var(--space-2);
+}
+
+.landing-admin-hour-row {
+  display: grid;
+  grid-template-columns: 5rem 4rem 1fr 1.5rem 1fr;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+}
+
+.landing-admin-hour-row:last-child {
+  border-bottom: none;
+}
+
+.landing-admin-hour-day {
+  font-weight: var(--font-medium);
+}
+
+.landing-admin-hour-closed {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.landing-admin-hour-time {
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  min-width: 0;
+}
+
+.landing-admin-hour-time:disabled {
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+}
+
+.landing-admin-hour-sep {
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+/* Image upload component */
+.image-upload-row .form-row,
+.image-upload-row label {
+  margin-bottom: var(--space-2);
+}
+
+.image-upload-control {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.image-upload-preview {
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  min-height: 120px;
+}
+
+.image-upload-preview-img {
+  display: block;
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  background: var(--color-bg);
+}
+
+.image-upload-actions {
+  display: flex;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  background: var(--color-bg);
+}
+
+.image-upload-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  padding: var(--space-4);
+}
+
+.image-upload-btn {
+  padding: var(--space-3) var(--space-6);
+  border: 2px dashed var(--color-border);
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.image-upload-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.image-upload-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.image-upload-error {
+  font-size: var(--text-sm);
+  color: var(--color-danger);
+}
+
+/* Multi-image upload (hero backgrounds) */
+.multi-image-upload-row .multi-image-upload-hint {
+  font-weight: normal;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.multi-image-upload-control {
+  width: 100%;
+}
+
+.multi-image-upload-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-4);
+}
+
+.multi-image-upload-card {
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+.multi-image-upload-preview {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--color-bg);
+}
+
+.multi-image-upload-preview-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.multi-image-upload-primary-badge {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  padding: var(--space-1) var(--space-2);
+  background: var(--color-primary);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+}
+
+.multi-image-upload-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: var(--space-2);
+}
+
+.multi-image-upload-actions .btn-sm {
+  flex: 1;
+  min-width: 0;
+}
+
+.multi-image-upload-add {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+}
+
+.multi-image-upload-add-btn {
+  padding: var(--space-3) var(--space-4);
+  border: none;
+  background: transparent;
+  font-family: var(--font-family);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  transition: color var(--transition);
+}
+
+.multi-image-upload-add-btn:hover {
+  color: var(--color-primary);
+}
+
+.multi-image-upload-add-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.multi-image-upload-error {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--color-danger);
+  margin-top: var(--space-2);
+}
+
+@media (max-width: 520px) {
+  .multi-image-upload-grid {
+    grid-template-columns: 1fr;
+  }
+  .landing-admin-hour-row {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: var(--space-1) var(--space-3);
+  }
+  .landing-admin-hour-day { grid-column: 1; grid-row: 1; }
+  .landing-admin-hour-closed { grid-column: 2; grid-row: 1; }
+  .landing-admin-hour-row input[type="time"]:first-of-type { grid-column: 1; grid-row: 2; }
+  .landing-admin-hour-sep { display: none; }
+  .landing-admin-hour-row input[type="time"]:last-of-type { grid-column: 2; grid-row: 2; }
+}

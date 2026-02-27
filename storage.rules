@@ -1,0 +1,13 @@
+rules_version = '2';
+// Firebase Storage security rules for Omari Studio
+// Copy to Firebase Console: Storage > Rules
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Landing page images: public read, write only via backend (Admin SDK)
+    match /landing/{allPaths=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+  }
+}

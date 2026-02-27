@@ -1,0 +1,14 @@
+# Local MongoDB for development (so login works without Atlas IP whitelist)
+# Run: docker-compose up -d
+# Then in backend/.env set: MONGODB_URI=mongodb://localhost:27017/omari_studio
+# Restart backend and run: cd backend && npm run seed:admin
+services:
+  mongo:
+    image: mongo:7
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
